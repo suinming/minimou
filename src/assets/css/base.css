@@ -1,0 +1,40 @@
+:root {
+  --red: #FF595A;
+  --black: #000000;
+  --beige: #FCE0C3;
+  --lightGrey: #D2D2D2;
+  --darkGrey: #7D7D7D;
+  --green: #2D5214;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Microsoft JhengHei',
+    sans-serif;
+  margin: 0%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  padding: 0 10px;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
+  object-fit: cover;
+}
