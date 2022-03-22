@@ -5,6 +5,7 @@
   --lightGrey: #D2D2D2;
   --darkGrey: #7D7D7D;
   --green: #2D5214;
+  --blue: #417ED9;
 }
 
 html {
@@ -36,5 +37,30 @@ img {
   max-width: 100%;
   vertical-align: middle;
   border-style: none;
-  object-fit: cover;
+}
+
+#app {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+}
+
+/* section*/
+section {
+  font-size: 25px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 36px;
+  margin: 0;
+}
+
+article {
+  font-weight: 290;
+  font-size: 16px;
+  line-height: 160%;
 }

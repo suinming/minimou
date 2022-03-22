@@ -1,5 +1,5 @@
 <template>
-  <header v-if="atTop" class="header">
+   <header v-if="atTop" class="header">
         <div class="navbarflexWrapper">
             <ul class="navbarLeft">
                 <li ><a href="#">首頁</a></li>
@@ -54,29 +54,13 @@ export default {
 </script>
 
 <style>
-#app {
-  max-width: 1360px;
-  margin: 0 auto;
-}
-
-.container{
-  width: 100%;
-}
-
-/* section*/
-section{
-  font-size: 25px;
-}
-
-</style>
-
-<style>
 /* top navbar */
-header{
+.header{
   max-height: 160px;
   font-size: 14px;
   color:var(--black);
   background: var(--black);
+  border-bottom: 1px solid var(--red);
   padding-left:76px;
   padding-right: 76px;
 }
@@ -132,6 +116,7 @@ header img{
   background: white;
   padding-right: 76px;
   padding-left: 76px;
+  z-index: 100;
 }
 
 .headerOnscroll img{
