@@ -27,6 +27,36 @@
         </div>
       </div>
     </section>
+    <!--nutrient -->
+    <section class="nutrient">
+      <TitleBlock :title='titleBlock.nutrient.title' :englishTitle='titleBlock.nutrient.englishTitle'/>
+      <!--nutritionist -->
+      <div class="nutritionist">
+        <img class="nutritionistImg" src="@/assets/img/nutritionist.png" alt="nutritionist">
+        <div class="portfolio">
+          <div class="title">
+            <div class="text">
+              <h3>營養師有樺要說</h3>
+              <span class="nutritionistName">簡鈺樺</span> <span class="redBlock">營養師</span>
+            </div>
+            <img class="QRcode" src="@/assets/img/QRcode.png" alt="QRcode">
+          </div>
+          <div class="portfolioContent">
+            <h6>{{ portfolioContent.degree }}</h6>
+            <h6>{{ portfolioContent.position }}</h6>
+            <h6>{{ portfolioContent.license }}</h6>
+            <h6>{{ portfolioContent.title1 }}</h6>
+            <h6>{{ portfolioContent.title2 }}</h6>
+            <h6>{{ portfolioContent.title3 }}</h6>
+            <h6>{{ portfolioContent.title4 }}</h6>
+          </div>
+        </div>
+      </div>
+      <!--menu -->
+      <div class="menu">
+        <MenuCard :item='menuItems[0]'/>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -34,32 +64,33 @@
 
 import CarouselSlide from '@/components/CarouselSlide.vue'
 import TitleBlock from '@/components/TitleBlock.vue'
+import MenuCard from '@/components/MenuCard.vue'
+import { titleBlock, menuItems, portfolioContent } from '@/data.js'
 
 export default {
   name: 'HomeView',
   components: {
     CarouselSlide,
-    TitleBlock
+    TitleBlock,
+    MenuCard
   },
   data () {
     return {
-      titleBlock: {
-        brand: { title: '品牌介紹', englishTitle: 'BRAND' }
-      }
+      titleBlock: titleBlock,
+      portfolioContent: portfolioContent,
+      menuItems: menuItems
     }
   }
 }
 </script>
 
-<style scoped>
-
 /* brand intro*/
+<style scoped>
 .brandIntro{
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 596px;
-  height: 100%;
+  margin-bottom: 64px;
 }
 
 .minimouSectionLogoContainer{
@@ -68,11 +99,19 @@ export default {
   margin-top: 24px;
 }
 
-.brandIntro .content{
+.content{
   display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 /*-- brand intro left*/
+
+.left{
+  max-width: 426px;
+  width: 100%;
+  margin-left: 168px;
+}
 
 .left .title span{
   font-weight: 700;
@@ -85,7 +124,6 @@ export default {
 }
 
 .left article{
-  max-width: 426px;
   border-top: 1px solid black;
   padding-top: 24px;
 }
@@ -96,7 +134,7 @@ export default {
   position: relative;
   max-width: 370px;
   width: 100%;
-  margin-left: 200px;
+  margin-right: 189px;
 }
 
 .circleGroup{
@@ -125,4 +163,72 @@ export default {
   font-size: 18px;
   color: var(--blue);
 }
+</style>
+
+/* nutrient*/
+<style scoped>
+.nutrient{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--lightGrey);
+}
+
+.nutritionist{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 24px;
+  padding-bottom: 25px;
+}
+
+.portfolio{
+  max-width: 427px;
+  width: 100%;
+}
+
+/* portfolio title*/
+
+.portfolio .title{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  max-height: 129px;
+  height: 100%;
+  margin-bottom: 24px;
+}
+
+.nutritionistName{
+  font-size: 24px;
+}
+
+.redBlock{
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-block;
+  background-color: var(--red);
+  color: white;
+  padding: 4px;
+}
+
+.nutritionistImg{
+  max-width: 266px;
+  max-height: 335px;
+}
+
+.QRcode{
+  max-width: 92px;
+  max-height: 92px;
+}
+
+/* portfolio content*/
+
+.portfolioContent{
+  line-height: 22px;
+}
+</style>
+
+/* menu*/
+<style scoped>
+
 </style>
